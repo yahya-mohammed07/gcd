@@ -1,10 +1,10 @@
 #include <iostream>
 
-int gcd(int m, int n) //  gcd(1220, 516)
+auto gcd(std::size_t m, std::size_t n) -> std::size_t//  gcd(1220, 516)
 {
   if ( n == 0 ) { return m; }
   //
-  int r = 0;
+  std::size_t r = 0;
   while ( n > 0 ) {
     r = ( m % n );  // 1220 % 516 -> 188
     m = n;          // `m` takes `n`s value so: m -> 516
@@ -13,12 +13,10 @@ int gcd(int m, int n) //  gcd(1220, 516)
   return m;
 }
 
-int main()
+auto main() ->int
 {
-  //std::cout << "- enter two non-zero integers: ";
-  int a=1220, b=516;
-  //std::cin >> a >> b;
-  for (int i = 0; i < 100'000; ++i) {
-    std::cout << gcd( a, b ) << '\n';
-  }
+  std::cout << "- enter two non-zero integers: ";
+  std::size_t a=1220, b=516;
+  std::cin >> a >> b;
+  std::cout << gcd( a, b ) << '\n';
 }
