@@ -1,15 +1,15 @@
 #include <iostream>
 
-int gcd(int m, int n)
+auto gcd(int m, int n) -> std::size_t
 {
   if ( n == 0 ) { return m; }
   if ( n < 0 )  { return 1; }
-  int r = m%n;
+  std::size_t r = m%n;
   return gcd(n, r);
 }
 
 int main()
 {
-  int m = 1220, n=516;
+  std::size_t m = 1220, n=516;
   std::cout << gcd(m, n) << '\n';
 }
