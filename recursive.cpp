@@ -8,7 +8,7 @@ auto gcd(int m, int n) -> std::size_t
   return gcd(n, r);
 }
 
-int main()
+auto main() -> int
 {
   std::size_t m = 1220, n=516;
   std::cout << gcd(m, n) << '\n';
